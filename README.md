@@ -1,6 +1,7 @@
 # Snake Game 🐍
 
 Create a snake game using python's turtle module.
+
 Learning from the 100-Days of Python course by Angela Yu.
 
 ## Day 20:
