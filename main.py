@@ -32,6 +32,7 @@ while GAME_IS_ON:
     if snake.head.distance(food) < 15: # Food is 10x10 px, add 5 to account for the snake.
         food.refresh()
         # Add a new segment to the snake.
+        # Update the score.
 
 
 # Exit the Screen on Click
