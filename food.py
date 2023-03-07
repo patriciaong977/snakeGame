@@ -1,3 +1,4 @@
+'''The Food for the Snake Game.'''
 from turtle import Turtle
 import random
 

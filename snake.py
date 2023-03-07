@@ -1,3 +1,4 @@
+'''The Snake Body, and Movement for the Snake Game.'''
 from turtle import Turtle
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
@@ -17,11 +18,20 @@ class Snake:
     def create_snake(self):
         '''S1: Create the snake body. Turtle = 20x20 pixels'''
         for pos in STARTING_POSITIONS:  # For each pos in the list.
-            snake = Turtle("square")  # Create a square turtle.
-            snake.color("white")
-            snake.penup()
-            snake.goto(pos)
-            self.segments.append(snake)
+            self.add_segment(pos)
+
+    def add_segment(self, pos):
+        '''Add a new segment to the snake body when the snake eats a food.'''
+        snake = Turtle("square")  # Create a square turtle.
+        snake.color("white")
+        snake.penup()
+        snake.goto(pos)
+        self.segments.append(snake)
+
+    def extend(self):
+        '''Add a new segment to the snake body when the snake eats a food.
+        Get the position of the last segment in the snake body, and add a new segment to the snake body.'''
+        self.add_segment(self.segments[-1].pos()) # In python, can write a negative index to count from the end of the list.
 
     def move(self):
         '''S2: Move the snake body'''
