@@ -43,16 +43,12 @@ while GAME_IS_ON:
         scoreboard.game_over()
 
     # Detect collision with the tail.
-    for segment in snake.segments:
+    # Gives everything on the list except the first item.
+    for segment in snake.segments[1:]:
         '''If the head collides with any segment in the tail, the game ends. Trigger game over.'''
-        if segment == snake.head:
-            pass
-        elif snake.head.distance(segment) < 10:
+        if snake.head.distance(segment) < 10:
             GAME_IS_ON = False
             scoreboard.game_over()
-
-
-
 
 # Exit the Screen on Click
 screen.exitonclick()
